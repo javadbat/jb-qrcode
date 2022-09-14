@@ -1,0 +1,36 @@
+{
+  "name": "jb-qrcode",
+  "description": "qrcode web component",
+  "type": "module",
+  "author": {
+		"name": "mohammad javad bathaei",
+		"email": "javadbat@gmail.com"
+	},
+  "keywords": [
+    "jb",
+    "qr",
+    "jb-qrcode",
+    "qrcode",
+    "qr code",
+    "barcode",
+    "web component"
+  ],
+  "version": "1.0.0",
+  "bugs": "https://github.com/javadbat/jb-qrcode/issues",
+  "license": "MIT",
+  "files": [
+    "LICENSE",
+    "README.md",
+    "lib/",
+    "dist/"
+  ],
+  "main": "index.js",
+  "types": "./dist/JBQrcode.d.ts",
+  "repository": {
+		"type": "git",
+		"url": "git@github.com:javadbat/jb-qrcode.git"
+  },
+  "dependencies": {
+    "qrcode": ">=1.5.0"
+  }
+}

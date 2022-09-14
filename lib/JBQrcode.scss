@@ -1,0 +1,42 @@
+.jb-qrcode-web-component{
+    .qrcode-wrapper{
+        width: 100%;
+        height: 100%;
+        .qrcode-image{
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+        }
+        &.--hidden{
+            display: none;
+        }
+        &.--open{
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .qrcode-image{
+                width: 174px;
+                height: 174px;
+
+            }
+        }
+    }
+    .placeholder-wrapper{
+        width: 100%;
+        height: 100%;
+        &.--hidden{
+            display: none;
+        }
+        svg{
+            width: 100%;
+            height: 100%;
+            fill:#dfdfdf
+        }
+    }
+}
