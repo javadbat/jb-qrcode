@@ -1,2 +1,2 @@
 # jb-qrcode
-qrcode generator web component
+qrcode generator web component.
