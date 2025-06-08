@@ -1,4 +1,6 @@
-<div class="jb-qrcode-web-component">
+export function renderHTML(): string {
+  return /* html */ `
+  <div class="jb-qrcode-web-component">
     <div class="qrcode-wrapper --hidden">
         <img src="" class="qrcode-image"></canvas>
     </div>
@@ -8,3 +10,5 @@
         </svg>            
     </div>
 </div>
+  `;
+}
