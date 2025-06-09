@@ -1,1 +1,1 @@
-export * from './dist/JBQrCode.js';
+export * from './dist/JBQRCode.js';

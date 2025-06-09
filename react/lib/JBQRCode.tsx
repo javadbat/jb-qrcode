@@ -13,9 +13,9 @@ declare module "react" {
     // eslint-disable-next-line @typescript-eslint/no-namespace
     namespace JSX {
       interface IntrinsicElements {
-        'jb-qrcode': JBQrCodetype;
+        'jb-qrcode': JBQRCodetype;
       }
-      interface JBQrCodetype extends React.DetailedHTMLProps<React.HTMLAttributes<JBQRCodeWebComponent>, JBQRCodeWebComponent> {
+      interface JBQRCodetype extends React.DetailedHTMLProps<React.HTMLAttributes<JBQRCodeWebComponent>, JBQRCodeWebComponent> {
         logo?:string,
         value?: string,
       }
