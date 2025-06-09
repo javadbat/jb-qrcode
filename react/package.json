@@ -1,6 +1,6 @@
 {
-  "name": "jb-qrcode",
-  "description": "qrcode web component",
+  "name": "jb-qrcode-react",
+  "description": "qrcode react component",
   "type": "module",
   "author": {
 		"name": "mohammad javad bathaei",
@@ -13,27 +13,24 @@
     "qrcode",
     "qr code",
     "barcode",
-    "web component",
     "react component"
   ],
-  "version": "0.1.0",
+  "version": "1.0.0",
   "bugs": "https://github.com/javadbat/jb-qrcode/issues",
   "license": "MIT",
   "files": [
     "LICENSE",
     "README.md",
     "lib/",
-    "dist/",
-    "react",
-    "react/dist"
+    "dist/"
   ],
   "main": "index.js",
-  "types": "./dist/jb-qrcode.d.ts",
+  "types": "./dist/JBQrcode.d.ts",
   "repository": {
 		"type": "git",
 		"url": "git@github.com:javadbat/jb-qrcode.git"
   },
   "dependencies": {
-    "qr-code-styling": "^1.9.2"
+    "jb-qrcode": ">=1.0.0"
   }
 }

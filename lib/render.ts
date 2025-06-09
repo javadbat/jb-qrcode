@@ -1,14 +1,17 @@
 export function renderHTML(): string {
   return /* html */ `
   <div class="jb-qrcode-web-component">
-    <div class="qrcode-wrapper --hidden">
-        <img src="" class="qrcode-image"></canvas>
-    </div>
-    <div class="placeholder-wrapper">
-        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M15 21H13V19H15V21ZM13 14H11V19H13V14ZM21 12H19V16H21V12ZM19 10H17V12H19V10ZM7 12H5V14H7V12ZM5 10H3V12H5V10ZM12 5H14V3H12V5ZM4.5 4.5V7.5H7.5V4.5H4.5ZM9 9H3V3H9V9ZM4.5 16.5V19.5H7.5V16.5H4.5ZM9 21H3V15H9V21ZM16.5 4.5V7.5H19.5V4.5H16.5ZM21 9H15V3H21V9ZM19 19V16H15V18H17V21H21V19H19ZM17 12H13V14H17V12ZM13 10H7V12H9V14H11V12H13V10ZM14 9V7H12V5H10V9H14ZM6.75 5.25H5.25V6.75H6.75V5.25ZM6.75 17.25H5.25V18.75H6.75V17.25ZM18.75 5.25H17.25V6.75H18.75V5.25Z" />
-        </svg>            
-    </div>
-</div>
+      <div class="qrcode-wrapper">
+      </div>
+      <div class="overlay">      
+          <div class="download-button">
+            <svg id="DownloadIcon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path id="S1" d="M15.0382 12.5084L12.1222 15.4364L9.20621 12.5084"  stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path id="S3" d="M12.1222 15.4361L12.1222 3.39508"  stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path id="S2" d="M16.7549 8.12799H17.6879C19.7229 8.12799 21.3719 9.77699 21.3719 11.813V16.697C21.3719 18.727 19.7269 20.372 17.6969 20.372L6.55695 20.372C4.52195 20.372 2.87195 18.722 2.87195 16.687V11.802C2.87195 9.77299 4.51795 8.12799 6.54695 8.12799L7.48895 8.12799" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+      </div>
+  </div>
   `;
 }

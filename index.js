@@ -1,1 +1,2 @@
-import './dist/JBQrcode.js';
+import './dist/jb-qrcode.js';
+export * from './dist/jb-qrcode.js';
