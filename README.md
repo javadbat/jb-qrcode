@@ -27,7 +27,7 @@ to use this component in **react** see [`jb-qrcode/react`](https://github.com/ja
 
 first install the package
 
-```bash
+```sh
 npm i jb-qrcode
 ```
 then import js file
