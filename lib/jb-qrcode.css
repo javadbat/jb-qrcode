@@ -1,5 +1,3 @@
-@use './variables.css';
-
 :host{
   display: block;
   width: 15rem;
@@ -29,7 +27,7 @@
     z-index: 1;
     overflow: hidden;
     border-radius: var(--border-radius);
-    //
+    /*  */
     display: flex;
     justify-content: center;
     align-items: center;

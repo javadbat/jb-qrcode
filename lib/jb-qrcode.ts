@@ -1,4 +1,5 @@
-import CSS from './jb-qrcode.scss';
+import CSS from './jb-qrcode.css';
+import VariablesCSS from './variables.css';
 import { renderHTML } from './render';
 import type { BackgroundOptions, CornersSquareOptions, DotsOptions, ElementsObject } from './types.js';
 import { registerDefaultVariables } from 'jb-core/theme';
@@ -82,7 +83,7 @@ export class JBQRCodeWebComponent extends HTMLElement {
   initWebComponent() {
     registerDefaultVariables();
     const shadowRoot = this.attachShadow({ mode: 'open' });
-    const html = `<style>${CSS}</style>` + '\n' + renderHTML();
+    const html = `<style>${CSS} ${VariablesCSS}</style>` + '\n' + renderHTML();
     const element = document.createElement('template');
     element.innerHTML = html;
     shadowRoot.appendChild(element.content.cloneNode(true));
