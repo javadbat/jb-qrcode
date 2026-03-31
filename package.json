@@ -35,6 +35,6 @@
   },
   "dependencies": {
     "qr-code-styling": "^1.9.2",
-    "jb-core": ">=0.15.0"
+    "jb-core": ">=0.25.0"
   }
 }

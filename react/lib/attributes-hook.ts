@@ -1,5 +1,5 @@
-import { JBQRCodeWebComponent, type BackgroundOptions, type CornersSquareOptions, type DotsOptions } from "jb-qrcode";
-import { RefObject, useEffect } from "react";
+import type { JBQRCodeWebComponent, BackgroundOptions, CornersSquareOptions, DotsOptions } from "jb-qrcode";
+import { type RefObject, useEffect } from "react";
 
 export type JBQRCodeAttributes = {
   width?: number,
@@ -10,7 +10,7 @@ export type JBQRCodeAttributes = {
   cornersSquareOptions?: CornersSquareOptions
 
 }
-export function useJBQRCodeAttribute<TValue>(element: RefObject<JBQRCodeWebComponent>, props: JBQRCodeAttributes) {
+export function useJBQRCodeAttribute(element: RefObject<JBQRCodeWebComponent>, props: JBQRCodeAttributes) {
   useEffect(() => {
     if (element.current && props.width) {
       element.current.width = props.width

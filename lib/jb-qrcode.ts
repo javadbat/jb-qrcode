@@ -82,7 +82,7 @@ export class JBQRCodeWebComponent extends HTMLElement {
   }
   initWebComponent() {
     registerDefaultVariables();
-    const shadowRoot = this.attachShadow({ mode: 'open' });
+    const shadowRoot = this.attachShadow({ mode: 'open',clonable:true, serializable:true });
     const html = `<style>${CSS} ${VariablesCSS}</style>` + '\n' + renderHTML();
     const element = document.createElement('template');
     element.innerHTML = html;
