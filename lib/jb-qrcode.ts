@@ -18,6 +18,7 @@ export class JBQRCodeWebComponent extends HTMLElement {
   }
   get dotsOptions(){return this.#dotsOptions}
   set dotsOptions(value:DotsOptions){
+    if(value == undefined) return;
     Object.assign(this.#dotsOptions,value);
     this.drawQrcode();
   }
