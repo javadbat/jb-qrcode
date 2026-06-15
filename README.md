@@ -2,7 +2,8 @@
 
 [![Published on webcomponents.org](https://img.shields.io/badge/webcomponents.org-published-blue.svg)](https://www.webcomponents.org/element/jb-qrcode)
 [![GitHub license](https://img.shields.io/badge/license-MIT-brightgreen.svg)](https://raw.githubusercontent.com/javadbat/jb-qrcode/main/LICENSE)
-[![NPM Downloads](https://img.shields.io/npm/dw/jb-qrcode)](https://www.npmjs.com/package/jb-qrcode)
+[![NPM Version](https://img.shields.io/npm/v/jb-qrcode)](https://www.npmjs.com/package/jb-qrcode)
+![GitHub Created At](https://img.shields.io/github/created-at/javadbat/jb-qrcode)
 
 qrcode web component.    
 this component use [qr-code-styling](https://www.npmjs.com/package/qr-code-styling) inside and handle renders and props set for you.
