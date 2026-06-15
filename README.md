@@ -20,11 +20,20 @@ benefits:
 
 [storybook](https://javadbat.github.io/design-system/?path=/docs/components-jbqrcode)    
 
-## using with JS frameworks
-
+## Using With JS Frameworks
 - [<img src="https://img.shields.io/badge/React.js-jb--qrcode%2Freact-000.svg?logo=react&logoColor=%2361DAFB" height="30" />](https://github.com/javadbat/jb-qrcode/tree/main/react)
 
-## usage
+## Usage
+
+## Attributes/Properties
+
+| name | type | description |
+| --- | --- | --- |
+| `value` | attribute/property | QR code value. |
+| `logo` | attribute/property | Optional center logo URL. |
+| `dotsOption` | property | Dot rendering options passed to `qr-code-styling`. |
+| `cornersSquareOptions` | property | Corner square rendering options passed to `qr-code-styling`. |
+| `cornersDotOptions` | property | Corner dot rendering options passed to `qr-code-styling`. |
 
 first install the package
 
@@ -47,13 +56,13 @@ then use in your html
 ```HTML
 <jb-qrcode value="http://www.google.com" logo="put your logo url here">
 ```
-## styling
+## Styling
 you have 2 ways of customizing style in `jb-qrcode`
 
-1- use css variable
+1- use CSS variable
 2- set render options
 
-### css variable
+### CSS variable
 here is the variable list:
 
 | variable name                             | description |
@@ -88,8 +97,7 @@ const dom = document.querySelector("jb-qrcode");
     }
 ```
 
-## Other Related Docs:
-
+## Related Docs
 - see [`jb-qrcode/react`](https://github.com/javadbat/jb-qrcode/tree/main/react); if you want to use this component in react
 
 - see [All JB Design system Component List](https://javadbat.github.io/design-system/) for more components

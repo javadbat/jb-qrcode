@@ -4,3 +4,22 @@
 [![GitHub license](https://img.shields.io/badge/license-MIT-brightgreen.svg)](https://raw.githubusercontent.com/javadbat/jb-qrcode/main/LICENSE)
 [![NPM Version](https://img.shields.io/npm/v/jb-qrcode-react)](https://www.npmjs.com/package/jb-qrcode-react)
 ![GitHub Created At](https://img.shields.io/github/created-at/javadbat/jb-qrcode)
+
+React wrapper for [`jb-qrcode`](https://github.com/javadbat/jb-qrcode).
+
+## Installation
+
+```sh
+npm i jb-qrcode
+```
+
+## Usage
+```jsx
+import { JBQRCode } from 'jb-qrcode/react';
+
+<JBQRCode value="https://javadbat.github.io/design-system/" />
+```
+
+## Shared Documentation
+
+For QR rendering options, styling, and web-component behavior, see [`jb-qrcode`](https://github.com/javadbat/jb-qrcode).
