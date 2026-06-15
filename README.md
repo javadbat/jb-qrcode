@@ -22,7 +22,7 @@ benefits:
 
 ## using with JS frameworks
 
-to use this component in **react** see [`jb-qrcode/react`](https://github.com/javadbat/jb-qrcode/tree/main/react);
+- [<img src="https://img.shields.io/badge/React.js-jb--qrcode%2Freact-000.svg?logo=react&logoColor=%2361DAFB" height="30" />](https://github.com/javadbat/jb-qrcode/tree/main/react)
 
 ## usage
 
