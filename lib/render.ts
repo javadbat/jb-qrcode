@@ -1,10 +1,10 @@
 export function renderHTML(): string {
   return /* html */ `
   <div class="jb-qrcode-web-component">
-      <div class="qrcode-wrapper">
+      <div class="qrcode-wrapper" part="qrcode">
       </div>
-      <div class="overlay">      
-          <div class="download-button">
+      <div class="overlay" part="overlay">      
+          <div class="download-button" part="download-button">
             <svg id="DownloadIcon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path id="S1" d="M15.0382 12.5084L12.1222 15.4364L9.20621 12.5084"  stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
               <path id="S3" d="M12.1222 15.4361L12.1222 3.39508"  stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>

@@ -5,12 +5,13 @@ export type JBQRCodeAttributes = {
   width?: number,
   height?: number,
   downloadFileName?: string,
+  dotsOptions?: DotsOptions
   dotsOption?: DotsOptions
   backgroundOptions?: BackgroundOptions
   cornersSquareOptions?: CornersSquareOptions
 
 }
-export function useJBQRCodeAttribute(element: RefObject<JBQRCodeWebComponent>, props: JBQRCodeAttributes) {
+export function useJBQRCodeAttribute(element: RefObject<JBQRCodeWebComponent | null>, props: JBQRCodeAttributes) {
   useEffect(() => {
     if (element.current && props.width) {
       element.current.width = props.width
@@ -30,10 +31,11 @@ export function useJBQRCodeAttribute(element: RefObject<JBQRCodeWebComponent>, p
   }, [props.downloadFileName, element.current]);
 
   useEffect(() => {
-    if (element.current && props.dotsOption) {
-      element.current.dotsOptions = props.dotsOption
+    const dotsOptions = props.dotsOptions || props.dotsOption;
+    if (element.current && dotsOptions) {
+      element.current.dotsOptions = dotsOptions
     }
-  }, [props.dotsOption, element.current]);
+  }, [props.dotsOptions, props.dotsOption, element.current]);
 
   useEffect(() => {
     if (element.current && props.backgroundOptions) {

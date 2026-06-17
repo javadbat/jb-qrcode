@@ -1,0 +1,203 @@
+{
+  "schemaVersion": "1.0.0",
+  "readme": "README.md",
+  "modules": [
+    {
+      "kind": "javascript-module",
+      "path": "lib/jb-qrcode.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "QR code web component built on qr-code-styling with SVG rendering, optional logo, styling options, and download overlay.",
+          "name": "JBQRCodeWebComponent",
+          "tagName": "jb-qrcode",
+          "customElement": true,
+          "superclass": {
+            "name": "HTMLElement"
+          },
+          "attributes": [
+            {
+              "name": "value",
+              "description": "QR code data. When empty, no QR code is rendered.",
+              "type": {
+                "text": "string"
+              }
+            },
+            {
+              "name": "logo",
+              "description": "Optional center logo image URL.",
+              "type": {
+                "text": "string"
+              }
+            },
+            {
+              "name": "file-name",
+              "description": "Default file name used by the overlay download button and download().",
+              "type": {
+                "text": "string"
+              },
+              "default": "qr"
+            },
+            {
+              "name": "width",
+              "description": "QR render width in pixels. Also sets host inline width.",
+              "type": {
+                "text": "number"
+              },
+              "default": "240"
+            },
+            {
+              "name": "height",
+              "description": "QR render height in pixels. Also sets host inline height.",
+              "type": {
+                "text": "number"
+              },
+              "default": "240"
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "value",
+              "description": "QR code data.",
+              "type": {
+                "text": "string | null"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "logo",
+              "description": "Optional center logo image URL.",
+              "type": {
+                "text": "string | null"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "width",
+              "description": "QR render width in pixels.",
+              "type": {
+                "text": "number"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "height",
+              "description": "QR render height in pixels.",
+              "type": {
+                "text": "number"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "downloadFileName",
+              "description": "Default file name used by download().",
+              "type": {
+                "text": "string"
+              },
+              "default": "qr"
+            },
+            {
+              "kind": "field",
+              "name": "dotsOptions",
+              "description": "Dot rendering options passed to qr-code-styling.",
+              "type": {
+                "text": "DotsOptions"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "cornersSquareOptions",
+              "description": "Corner square rendering options passed to qr-code-styling.",
+              "type": {
+                "text": "CornersSquareOptions"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "backgroundOptions",
+              "description": "Background rendering options passed to qr-code-styling.",
+              "type": {
+                "text": "BackgroundOptions"
+              }
+            }
+          ],
+          "methods": [
+            {
+              "name": "drawQrcode",
+              "description": "Recreates and appends the QR SVG using the current value and options."
+            },
+            {
+              "name": "download",
+              "description": "Downloads the current QR code. Extension defaults to png."
+            }
+          ],
+          "events": [
+            {
+              "name": "load",
+              "description": "Dispatched from connectedCallback."
+            },
+            {
+              "name": "init",
+              "description": "Dispatched from connectedCallback after load."
+            }
+          ],
+          "cssParts": [
+            {
+              "name": "qrcode",
+              "description": "Wrapper where the generated QR SVG is appended."
+            },
+            {
+              "name": "overlay",
+              "description": "Hover overlay over the QR code."
+            },
+            {
+              "name": "download-button",
+              "description": "Download button inside the overlay."
+            }
+          ],
+          "cssProperties": [
+            {
+              "name": "--jb-qrcode-image-color",
+              "description": "Default QR dot and corner color."
+            },
+            {
+              "name": "--jb-qrcode-overlay-bg-color",
+              "description": "Hover overlay background color."
+            },
+            {
+              "name": "--jb-qrcode-overlay-button-color",
+              "description": "Download icon color."
+            },
+            {
+              "name": "--jb-qrcode-overlay-button-bg-color-hover",
+              "description": "Download button hover background color."
+            },
+            {
+              "name": "--jb-qrcode-overlay-button-color-hover",
+              "description": "Download icon hover color."
+            }
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "JBQRCodeWebComponent",
+          "declaration": {
+            "name": "JBQRCodeWebComponent",
+            "module": "lib/jb-qrcode.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "jb-qrcode",
+          "declaration": {
+            "name": "JBQRCodeWebComponent",
+            "module": "lib/jb-qrcode.ts"
+          }
+        }
+      ]
+    }
+  ]
+}

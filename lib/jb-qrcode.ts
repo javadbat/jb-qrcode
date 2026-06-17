@@ -18,17 +18,18 @@ export class JBQRCodeWebComponent extends HTMLElement {
   }
   get dotsOptions(){return this.#dotsOptions}
   set dotsOptions(value:DotsOptions){
-    if(value == undefined) return;
-    Object.assign(this.#dotsOptions,value);
+    if(value === undefined) return;
+    this.#dotsOptions = { ...this.#dotsOptions, ...value };
     this.drawQrcode();
   }
-  #cornersSquareOptions: DotsOptions = {
+  #cornersSquareOptions: CornersSquareOptions = {
     color: "var(--image-color)",
     type: "square"
   }
   get cornersSquareOptions(){return this.#cornersSquareOptions}
   set cornersSquareOptions(value:CornersSquareOptions){
-    Object.assign(this.#cornersSquareOptions,value);
+    if(value === undefined) return;
+    this.#cornersSquareOptions = { ...this.#cornersSquareOptions, ...value };
     this.drawQrcode();
   }
   #backgroundOptions: BackgroundOptions = {
@@ -38,7 +39,8 @@ export class JBQRCodeWebComponent extends HTMLElement {
     return this.#backgroundOptions;
   }
   public set backgroundOptions(value: BackgroundOptions) {
-    Object.assign(this.#backgroundOptions,value);
+    if(value === undefined) return;
+    this.#backgroundOptions = { ...this.#backgroundOptions, ...value };
     this.drawQrcode();
   }
   get width() {
@@ -63,16 +65,19 @@ export class JBQRCodeWebComponent extends HTMLElement {
     return this.#value;
   }
   set value(value: string | null) {
-    if (value && value !== this.value) {
-      this.#value = value
+    if (value) {
+      if (value === this.#value) return;
+      this.#value = value;
       this.drawQrcode();
     } else {
       this.#value = null;
+      this.elements.qrCodeWrapper.innerHTML = '';
     }
   }
   #logo: string | null = null;
-  set logo(value: string) {
-    this.#logo = value
+  set logo(value: string | null) {
+    this.#logo = value;
+    this.drawQrcode();
   }
   get logo(): string | null {
     return this.#logo
@@ -80,6 +85,18 @@ export class JBQRCodeWebComponent extends HTMLElement {
   constructor() {
     super();
     this.initWebComponent();
+  }
+  connectedCallback() {
+    this.callOnLoadEvent();
+    this.callOnInitEvent();
+  }
+  callOnLoadEvent() {
+    const event = new CustomEvent("load", { bubbles: false, composed: false });
+    this.dispatchEvent(event);
+  }
+  callOnInitEvent() {
+    const event = new CustomEvent("init", { bubbles: false, composed: false });
+    this.dispatchEvent(event);
   }
   initWebComponent() {
     registerDefaultVariables();
@@ -89,23 +106,23 @@ export class JBQRCodeWebComponent extends HTMLElement {
     element.innerHTML = html;
     shadowRoot.appendChild(element.content.cloneNode(true));
     this.elements = {
-      componentWrapper: shadowRoot.querySelector('.circle-chart-web-component')!,
+      componentWrapper: shadowRoot.querySelector('.jb-qrcode-web-component')!,
       qrCodeWrapper: shadowRoot.querySelector('.qrcode-wrapper')!,
       downloadButton: shadowRoot.querySelector('#DownloadIcon')!,
     };
     this.#initEventListeners();
   }
   static get observedAttributes() {
-    return ['value', 'logo', "file-name"];
+    return ['value', 'logo', "file-name", "width", "height"];
   }
-  attributeChangedCallback(name: string, oldValue: string, newValue: string) {
+  attributeChangedCallback(name: string, oldValue: string | null, newValue: string | null) {
     // do something when an attribute has changed
     this.onAttributeChange(name, newValue);
   }
   #initEventListeners() {
     this.elements.downloadButton.addEventListener("click", () => this.download())
   }
-  onAttributeChange(name: string, value: string) {
+  onAttributeChange(name: string, value: string | null) {
     switch (name) {
       case 'value':
         this.value = value;
@@ -114,7 +131,17 @@ export class JBQRCodeWebComponent extends HTMLElement {
         this.logo = value;
         break;
       case 'file-name':
-        this.downloadFileName = value;
+        this.downloadFileName = value || "qr";
+        break;
+      case 'width':
+        if (value !== null && !Number.isNaN(Number(value))) {
+          this.width = Number(value);
+        }
+        break;
+      case 'height':
+        if (value !== null && !Number.isNaN(Number(value))) {
+          this.height = Number(value);
+        }
         break;
     }
   }

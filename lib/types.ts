@@ -9,6 +9,6 @@ export type ElementsObject = {
 }
 
 export type JBQRCodeEventType<TEvent> = EventTypeWithTarget<TEvent, JBQRCodeWebComponent>
-export type DotsOptions =  Options["dotsOptions"]
-export type BackgroundOptions =  Options["backgroundOptions"]
-export type CornersSquareOptions =  Options["cornersSquareOptions"]
+export type DotsOptions = Options["dotsOptions"]
+export type BackgroundOptions = Options["backgroundOptions"]
+export type CornersSquareOptions = Options["cornersSquareOptions"]
