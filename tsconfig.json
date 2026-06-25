@@ -2,10 +2,10 @@
     "compilerOptions": {
         
         "rootDir": "./lib",
-        "declarationDir": "./dist"
+        "declarationDir": "./dist",
+        "skipLibCheck": true
     },
     "include": [
-        "../global.d.ts",
         "lib/**/*.ts",
     ],
     "exclude": [
