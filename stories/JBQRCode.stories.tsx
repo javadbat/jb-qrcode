@@ -1,15 +1,15 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import React, { useRef } from "react";
 
-import { JBQRCode, Props } from "jb-qrcode/react";
+import { JBQRCode } from "jb-qrcode/react";
 
 
-const meta: Meta<Props> = {
+const meta = {
   title: "Components/JBQRCode",
   component: JBQRCode,
-};
+} satisfies Meta<typeof JBQRCode>;
 export default meta;
-type Story = StoryObj<typeof JBQRCode>;
+type Story = StoryObj<typeof meta>;
 
 export const Normal: Story = {
   args: {
