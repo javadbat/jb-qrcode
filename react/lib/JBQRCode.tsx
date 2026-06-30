@@ -6,6 +6,7 @@ import type {JBQRCodeWebComponent} from 'jb-qrcode';
 import { useEvents, type EventProps } from './events-hook';
 import { useJBQRCodeAttribute, type JBQRCodeAttributes } from './attributes-hook';
 import type { JBElementStandardProps } from 'jb-core/react';
+import './module-declaration.js';
 
 
 export const JBQRCode = React.forwardRef<JBQRCodeWebComponent, Props>((props, ref) => {
@@ -29,16 +30,3 @@ type QRCodeProps = EventProps & JBQRCodeAttributes & {
 }
 export type Props = QRCodeProps & JBElementStandardProps<JBQRCodeWebComponent,keyof QRCodeProps>
 JBQRCode.displayName = "JBQRCode";
-
-declare module "react" {
-    // eslint-disable-next-line @typescript-eslint/no-namespace
-    namespace JSX {
-      interface IntrinsicElements {
-        'jb-qrcode': JBQRCodetype;
-      }
-      interface JBQRCodetype extends React.DetailedHTMLProps<React.HTMLAttributes<JBQRCodeWebComponent>, JBQRCodeWebComponent> {
-        logo?:string,
-        value?: string,
-      }
-    }
-}
