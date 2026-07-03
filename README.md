@@ -195,7 +195,7 @@ jb-qrcode {
 }
 
 jb-qrcode::part(download-button) {
-  border-radius: 8px;
+  border-radius: 0.5rem;
 }
 ```
 
