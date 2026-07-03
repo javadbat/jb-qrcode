@@ -23,6 +23,10 @@ import { JBQRCode } from 'jb-qrcode/react';
 <JBQRCode value="https://javadbat.github.io/design-system/" />;
 ```
 
+## When to use
+
+Use `JBQRCode` when a React view needs to render downloadable QR codes with optional logo, size control, and `qr-code-styling` render options.
+
 ## Props
 
 | prop | type | description |
@@ -49,6 +53,10 @@ import { JBQRCode } from 'jb-qrcode/react';
 ```jsx
 <JBQRCode value="https://github.com/javadbat/design-system" />
 ```
+
+## Value
+
+Set `value` to the text or URL encoded in the QR code. The component re-renders when the value changes.
 
 ## Logo
 
@@ -111,6 +119,10 @@ const qrRef = useRef(null);
 qrRef.current?.download('design-system', 'png');
 ```
 
+## Download
+
+The built-in overlay download action and the `download(fileName?, extension?)` method use `downloadFileName` as the default file name.
+
 ## Styling
 
 The React component uses the same CSS variables and parts as the web component.
@@ -125,6 +137,14 @@ The React component uses the same CSS variables and parts as the web component.
 ```jsx
 <JBQRCode className="brand-qr" value="https://github.com/javadbat/design-system" />
 ```
+
+## CSS parts and variables
+
+Use the same CSS parts and variables as the web component. The `Styling` section above shows the React class-based pattern.
+
+## Accessibility notes
+
+Provide nearby text that describes what the QR code represents. QR images are visual encodings, so the destination or payload should also be available as readable text or a link when users need to inspect it.
 
 ## Shared Documentation
 
