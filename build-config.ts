@@ -3,8 +3,9 @@ import type { ReactComponentBuildConfig, WebComponentBuildConfig } from "../../t
 export const webComponentList: WebComponentBuildConfig[] = [
   {
     name: "jb-qrcode",
-    path: "./lib/jb-qrcode.ts",
-    outputPath: "./dist/jb-qrcode.js",
+    path: "./web-component/lib/jb-qrcode.ts",
+    outputPath: "./web-component/dist/jb-qrcode.js",
+    tsConfigPath: "./web-component/tsconfig.json",
     umdName: "JBQRCode",
     external: ["qr-code-styling"],
     globals: {
