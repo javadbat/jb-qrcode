@@ -1,0 +1,352 @@
+import { Meta, Source, Story, Title } from '@storybook/addon-docs/blocks';
+import * as StyleStories from './Styles.stories';
+import antDesignThemeCss from '../../../docs/styles/ant-design.css?raw';
+import auroraThemeCss from '../../../docs/styles/aurora.css?raw';
+import bootstrapThemeCss from '../../../docs/styles/bootstrap.css?raw';
+import candyThemeCss from '../../../docs/styles/candy.css?raw';
+import carbonThemeCss from '../../../docs/styles/carbon.css?raw';
+import cupertinoThemeCss from '../../../docs/styles/cupertino.css?raw';
+import fluentThemeCss from '../../../docs/styles/fluent.css?raw';
+import forestThemeCss from '../../../docs/styles/forest.css?raw';
+import materialThemeCss from '../../../docs/styles/material.css?raw';
+import porcelainThemeCss from '../../../docs/styles/porcelain.css?raw';
+import sunsetThemeCss from '../../../docs/styles/sunset.css?raw';
+import terminalThemeCss from '../../../docs/styles/terminal.css?raw';
+import antDesignQRCodeCss from './styles/style-ant-design.css?raw';
+import auroraQRCodeCss from './styles/style-aurora.css?raw';
+import bootstrapQRCodeCss from './styles/style-bootstrap.css?raw';
+import candyQRCodeCss from './styles/style-candy.css?raw';
+import carbonQRCodeCss from './styles/style-carbon.css?raw';
+import cupertinoQRCodeCss from './styles/style-cupertino.css?raw';
+import fluentQRCodeCss from './styles/style-fluent.css?raw';
+import forestQRCodeCss from './styles/style-forest.css?raw';
+import materialQRCodeCss from './styles/style-material.css?raw';
+import porcelainQRCodeCss from './styles/style-porcelain.css?raw';
+import sunsetQRCodeCss from './styles/style-sunset.css?raw';
+import terminalQRCodeCss from './styles/style-terminal.css?raw';
+
+<Meta title="Components/JBQRCode/Styling" />
+
+<Title>Styling</Title>
+
+`JBQRCode` has two styling layers. Use CSS variables and parts for the component shell, overlay, and download control. Use `dotsOptions`, `cornersSquareOptions`, and `backgroundOptions` for the generated QR SVG itself.
+
+## Live Gallery
+
+<Story of={StyleStories.Gallery} />
+
+<Source of={StyleStories.Gallery} />
+
+## Common Design Tokens
+
+Use the core theme docs as the source of truth for shared design-system variables:
+
+- [Theme Colors](../../jb-core/theme/stories/colors.mdx) explains the general color palette variables, default colors, customization approaches, and color generation helpers.
+- [Theme Sizes](../../jb-core/theme/stories/sizes.mdx) explains shared size and radius variables.
+- [Theme Custom Galleries](https://javadbat.github.io/design-system/?path=/docs/theme-custom-material--docs) gathers the shared custom style recipes across components.
+
+QR code recipes should use those common tokens where possible, then map them into `--jb-qrcode-*` variables where the QR card needs a component-specific value.
+
+## Styling Model
+
+Use four layers when styling QR code examples:
+
+- Common design tokens are documented in [Theme Colors](../../jb-core/theme/stories/colors.mdx) and [Theme Sizes](../../jb-core/theme/stories/sizes.mdx).
+- Reusable example theme packs live in [`docs/styles`](https://github.com/javadbat/design-system/tree/main/docs/styles) and can be shared across components.
+- Component recipe files live in [`modules/jb-qrcode/stories/styles`](https://github.com/javadbat/design-system/tree/main/modules/jb-qrcode/stories/styles).
+- QR drawing options are JavaScript properties passed to `qr-code-styling`, so use them for dot shape, corner shape, gradients, logo, and QR background.
+
+Each example uses one shared example theme pack from [`docs/styles`](https://github.com/javadbat/design-system/tree/main/docs/styles), one QR-specific recipe from [`modules/jb-qrcode/stories/styles`](https://github.com/javadbat/design-system/tree/main/modules/jb-qrcode/stories/styles), and a small set of `qr-code-styling` options in the story.
+
+## Recommended Customization Path
+
+1. Use `--jb-qrcode-*` variables first for the shell background, radius, padding, border, shadow, overlay, and download button.
+2. Use `jb-qrcode::part(component)` for effects on the outer square surface.
+3. Use `jb-qrcode::part(qrcode)` only for the generated SVG wrapper, such as centering or filters.
+4. Use `jb-qrcode::part(overlay)`, `::part(download-button)`, and `::part(download-icon)` for hover-download affordances.
+5. Use `dotsOptions`, `cornersSquareOptions`, and `backgroundOptions` when changing QR drawing shape or generated SVG colors.
+6. Use common theme variables from [Theme Colors](../../jb-core/theme/stories/colors.mdx) and [Theme Sizes](../../jb-core/theme/stories/sizes.mdx) when the style should align with the design system.
+7. Put reusable theme-pack values in [`docs/styles`](https://github.com/javadbat/design-system/tree/main/docs/styles) only when they should be shared by multiple component demos.
+
+## Parts And States
+
+<table>
+  <thead>
+    <tr>
+      <th>Part</th>
+      <th>Element</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td><code>component</code></td><td>Outer QR square wrapper</td><td>Use for surface effects such as outline, filters, or whole-card styling.</td></tr>
+    <tr><td><code>qrcode</code></td><td>Generated QR SVG wrapper</td><td>Use for centering, sizing effects, or filters around the generated QR SVG.</td></tr>
+    <tr><td><code>overlay</code></td><td>Hover overlay over the QR code</td><td>Use for overlay blur, opacity behavior, or background effects.</td></tr>
+    <tr><td><code>download-button</code></td><td>Download button inside the overlay</td><td>Use for the visible interactive button surface.</td></tr>
+    <tr><td><code>download-icon</code></td><td>Download SVG icon</td><td>Use for icon sizing or effects.</td></tr>
+  </tbody>
+</table>
+
+`JBQRCode` does not currently expose custom CSS states. Use variables and hover behavior on `::part(overlay)` for visual changes.
+
+## CSS Variables
+
+<table>
+  <thead>
+    <tr>
+      <th>Variable</th>
+      <th>Category</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td><code>--jb-qrcode-width</code></td><td>Size</td><td>Default host width when the width property does not set an inline size.</td></tr>
+    <tr><td><code>--jb-qrcode-height</code></td><td>Size</td><td>Default host height when the height property does not set an inline size.</td></tr>
+    <tr><td><code>--jb-qrcode-border-radius</code></td><td>Size</td><td>Radius of the QR square and overlay.</td></tr>
+    <tr><td><code>--jb-qrcode-padding</code></td><td>Size</td><td>Padding around the generated QR SVG.</td></tr>
+    <tr><td><code>--jb-qrcode-download-button-size</code></td><td>Size</td><td>Download button width and height.</td></tr>
+    <tr><td><code>--jb-qrcode-download-button-border-radius</code></td><td>Size</td><td>Download button border radius.</td></tr>
+    <tr><td><code>--jb-qrcode-overlay-gap</code></td><td>Size</td><td>Gap between overlay controls.</td></tr>
+    <tr><td><code>--jb-qrcode-image-color</code></td><td>Theme/Color</td><td>Default QR dot and corner color.</td></tr>
+    <tr><td><code>--jb-qrcode-bg-color</code></td><td>Theme/Color</td><td>QR component shell background.</td></tr>
+    <tr><td><code>--jb-qrcode-border-color</code></td><td>Theme/Color</td><td>QR component shell border color.</td></tr>
+    <tr><td><code>--jb-qrcode-box-shadow</code></td><td>Theme/Color</td><td>QR component shell shadow.</td></tr>
+    <tr><td><code>--jb-qrcode-overlay-bg-color</code></td><td>Theme/Color</td><td>Hover overlay background color.</td></tr>
+    <tr><td><code>--jb-qrcode-overlay-button-color</code></td><td>Theme/Color</td><td>Download icon color.</td></tr>
+    <tr><td><code>--jb-qrcode-overlay-button-bg-color-hover</code></td><td>Theme/Color</td><td>Download button hover background color.</td></tr>
+    <tr><td><code>--jb-qrcode-overlay-button-color-hover</code></td><td>Theme/Color</td><td>Download icon hover color.</td></tr>
+    <tr><td><code>--jb-qrcode-border-width</code></td><td>Other</td><td>QR component shell border width.</td></tr>
+    <tr><td><code>--jb-qrcode-border-style</code></td><td>Other</td><td>QR component shell border style.</td></tr>
+    <tr><td><code>--jb-qrcode-overlay-opacity</code></td><td>Other</td><td>Overlay opacity before hover.</td></tr>
+    <tr><td><code>--jb-qrcode-overlay-opacity-hover</code></td><td>Other</td><td>Overlay opacity while the component is hovered.</td></tr>
+    <tr><td><code>--jb-qrcode-overlay-backdrop-filter</code></td><td>Other</td><td>Backdrop filter applied to the overlay.</td></tr>
+  </tbody>
+</table>
+
+## Starter Recipe
+
+Use this minimal recipe when a product only needs brand alignment for the QR card and overlay.
+
+```css
+jb-qrcode.brand-qrcode {
+  --jb-qrcode-image-color: #1d4ed8;
+  --jb-qrcode-bg-color: #ffffff;
+  --jb-qrcode-border-radius: 0.75rem;
+  --jb-qrcode-padding: 0.75rem;
+  --jb-qrcode-border-width: 1px;
+  --jb-qrcode-border-color: #dbe3ef;
+  --jb-qrcode-box-shadow: 0 0.75rem 1.75rem rgb(15 23 42 / 0.14);
+  --jb-qrcode-overlay-bg-color: rgb(29 78 216 / 0.64);
+  --jb-qrcode-overlay-button-color: #ffffff;
+  --jb-qrcode-overlay-button-bg-color-hover: #ffffff;
+  --jb-qrcode-overlay-button-color-hover: #1d4ed8;
+}
+
+jb-qrcode.brand-qrcode::part(download-button) {
+  border: 1px solid currentColor;
+}
+```
+
+Use QR drawing options for generated SVG details:
+
+```tsx
+<JBQRCode
+  className="brand-qrcode"
+  value="https://javadbat.github.io/design-system/"
+  dotsOptions={{ color: "var(--jb-qrcode-image-color)", type: "rounded" }}
+  cornersSquareOptions={{ color: "var(--jb-qrcode-image-color)", type: "extra-rounded" }}
+  backgroundOptions={{ color: "transparent" }}
+/>
+```
+
+## Style Recipes
+
+### Carbon
+
+<Story of={StyleStories.Carbon} />
+
+<Source of={StyleStories.Carbon} />
+
+#### Shared Tokens
+
+<Source code={carbonThemeCss} language="css" />
+
+#### QRCode CSS
+
+<Source code={carbonQRCodeCss} language="css" />
+
+### Aurora
+
+<Story of={StyleStories.Aurora} />
+
+<Source of={StyleStories.Aurora} />
+
+#### Shared Tokens
+
+<Source code={auroraThemeCss} language="css" />
+
+#### QRCode CSS
+
+<Source code={auroraQRCodeCss} language="css" />
+
+### Forest
+
+<Story of={StyleStories.Forest} />
+
+<Source of={StyleStories.Forest} />
+
+#### Shared Tokens
+
+<Source code={forestThemeCss} language="css" />
+
+#### QRCode CSS
+
+<Source code={forestQRCodeCss} language="css" />
+
+### Sunset
+
+<Story of={StyleStories.Sunset} />
+
+<Source of={StyleStories.Sunset} />
+
+#### Shared Tokens
+
+<Source code={sunsetThemeCss} language="css" />
+
+#### QRCode CSS
+
+<Source code={sunsetQRCodeCss} language="css" />
+
+### Porcelain
+
+<Story of={StyleStories.Porcelain} />
+
+<Source of={StyleStories.Porcelain} />
+
+#### Shared Tokens
+
+<Source code={porcelainThemeCss} language="css" />
+
+#### QRCode CSS
+
+<Source code={porcelainQRCodeCss} language="css" />
+
+### Candy
+
+<Story of={StyleStories.Candy} />
+
+<Source of={StyleStories.Candy} />
+
+#### Shared Tokens
+
+<Source code={candyThemeCss} language="css" />
+
+#### QRCode CSS
+
+<Source code={candyQRCodeCss} language="css" />
+
+### Terminal
+
+<Story of={StyleStories.Terminal} />
+
+<Source of={StyleStories.Terminal} />
+
+#### Shared Tokens
+
+<Source code={terminalThemeCss} language="css" />
+
+#### QRCode CSS
+
+<Source code={terminalQRCodeCss} language="css" />
+
+### Material
+
+<Story of={StyleStories.Material} />
+
+<Source of={StyleStories.Material} />
+
+#### Shared Tokens
+
+<Source code={materialThemeCss} language="css" />
+
+#### QRCode CSS
+
+<Source code={materialQRCodeCss} language="css" />
+
+### Fluent
+
+<Story of={StyleStories.Fluent} />
+
+<Source of={StyleStories.Fluent} />
+
+#### Shared Tokens
+
+<Source code={fluentThemeCss} language="css" />
+
+#### QRCode CSS
+
+<Source code={fluentQRCodeCss} language="css" />
+
+### Bootstrap
+
+<Story of={StyleStories.Bootstrap} />
+
+<Source of={StyleStories.Bootstrap} />
+
+#### Shared Tokens
+
+<Source code={bootstrapThemeCss} language="css" />
+
+#### QRCode CSS
+
+<Source code={bootstrapQRCodeCss} language="css" />
+
+### Cupertino
+
+<Story of={StyleStories.Cupertino} />
+
+<Source of={StyleStories.Cupertino} />
+
+#### Shared Tokens
+
+<Source code={cupertinoThemeCss} language="css" />
+
+#### QRCode CSS
+
+<Source code={cupertinoQRCodeCss} language="css" />
+
+### Ant Design
+
+<Story of={StyleStories.AntDesign} />
+
+<Source of={StyleStories.AntDesign} />
+
+#### Shared Tokens
+
+<Source code={antDesignThemeCss} language="css" />
+
+#### QRCode CSS
+
+<Source code={antDesignQRCodeCss} language="css" />
+
+## Theme File Pattern
+
+Use [Theme Colors](../../jb-core/theme/stories/colors.mdx) and [Theme Sizes](../../jb-core/theme/stories/sizes.mdx) as the common design-token guides. Theme-pack files should keep reusable demo variables in [`docs/styles`](https://github.com/javadbat/design-system/tree/main/docs/styles), then each component should keep its own style CSS in its story [`styles`](https://github.com/javadbat/design-system/tree/main/modules/jb-qrcode/stories/styles) folder.
+
+```css
+/* https://github.com/javadbat/design-system/blob/main/docs/styles/carbon.css */
+.theme-name-style {
+  /* shared design-system variables */
+}
+
+/* https://github.com/javadbat/design-system/blob/main/modules/jb-qrcode/stories/styles/style-carbon.css */
+jb-qrcode.theme-name-qrcode {
+  /* QRCode host variables */
+}
+
+jb-qrcode.theme-name-qrcode::part(download-button) {
+  /* official download surface */
+}
+```
+
+This keeps common theme tokens reusable while making the official `JBQRCode` styling API visible in one page.

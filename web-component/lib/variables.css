@@ -1,7 +1,27 @@
 :host {
-  --image-color:var(--jb-qrcode-image-color, var(--jb-neutral));
+  /* Size */
+  --width: var(--jb-qrcode-width, 15rem);
+  --height: var(--jb-qrcode-height, 15rem);
+  --border-radius: var(--jb-qrcode-border-radius, 1.5rem);
+  --padding: var(--jb-qrcode-padding, 0);
+  --download-button-size: var(--jb-qrcode-download-button-size, 2.5rem);
+  --download-button-border-radius: var(--jb-qrcode-download-button-border-radius, 1rem);
+  --overlay-gap: var(--jb-qrcode-overlay-gap, 1rem);
+
+  /* Theme/Color */
+  --image-color: var(--jb-qrcode-image-color, var(--jb-neutral));
+  --bg-color: var(--jb-qrcode-bg-color, transparent);
+  --border-color: var(--jb-qrcode-border-color, transparent);
+  --box-shadow: var(--jb-qrcode-box-shadow, none);
   --overlay-bg-color: var(--jb-qrcode-overlay-bg-color, oklch(from var(--jb-neutral) l c h / calc(alpha - 0.5)));
   --overlay-button-color: var(--jb-qrcode-overlay-button-color, var(--jb-white));
   --overlay-button-bg-color-hover: var(--jb-qrcode-overlay-button-bg-color-hover, var(--jb-white));
   --overlay-button-color-hover: var(--jb-qrcode-overlay-button-color-hover, var(--jb-neutral));
+
+  /* Other */
+  --border-width: var(--jb-qrcode-border-width, 0);
+  --border-style: var(--jb-qrcode-border-style, solid);
+  --overlay-opacity: var(--jb-qrcode-overlay-opacity, 0);
+  --overlay-opacity-hover: var(--jb-qrcode-overlay-opacity-hover, 1);
+  --overlay-backdrop-filter: var(--jb-qrcode-overlay-backdrop-filter, blur(0.5rem));
 }

@@ -144,6 +144,10 @@
           ],
           "cssParts": [
             {
+              "name": "component",
+              "description": "Outer QR square wrapper."
+            },
+            {
               "name": "qrcode",
               "description": "Wrapper where the generated QR SVG is appended."
             },
@@ -154,12 +158,56 @@
             {
               "name": "download-button",
               "description": "Download button inside the overlay."
+            },
+            {
+              "name": "download-icon",
+              "description": "Download SVG icon."
             }
           ],
           "cssProperties": [
             {
+              "name": "--jb-qrcode-width",
+              "description": "Default host width when the width property does not set an inline size."
+            },
+            {
+              "name": "--jb-qrcode-height",
+              "description": "Default host height when the height property does not set an inline size."
+            },
+            {
+              "name": "--jb-qrcode-border-radius",
+              "description": "Radius of the QR square and overlay."
+            },
+            {
+              "name": "--jb-qrcode-padding",
+              "description": "Padding around the generated QR SVG."
+            },
+            {
+              "name": "--jb-qrcode-download-button-size",
+              "description": "Download button width and height."
+            },
+            {
+              "name": "--jb-qrcode-download-button-border-radius",
+              "description": "Download button border radius."
+            },
+            {
+              "name": "--jb-qrcode-overlay-gap",
+              "description": "Gap between overlay controls."
+            },
+            {
               "name": "--jb-qrcode-image-color",
               "description": "Default QR dot and corner color."
+            },
+            {
+              "name": "--jb-qrcode-bg-color",
+              "description": "QR component shell background."
+            },
+            {
+              "name": "--jb-qrcode-border-color",
+              "description": "QR component shell border color."
+            },
+            {
+              "name": "--jb-qrcode-box-shadow",
+              "description": "QR component shell shadow."
             },
             {
               "name": "--jb-qrcode-overlay-bg-color",
@@ -176,6 +224,26 @@
             {
               "name": "--jb-qrcode-overlay-button-color-hover",
               "description": "Download icon hover color."
+            },
+            {
+              "name": "--jb-qrcode-border-width",
+              "description": "QR component shell border width."
+            },
+            {
+              "name": "--jb-qrcode-border-style",
+              "description": "QR component shell border style."
+            },
+            {
+              "name": "--jb-qrcode-overlay-opacity",
+              "description": "Overlay opacity before hover."
+            },
+            {
+              "name": "--jb-qrcode-overlay-opacity-hover",
+              "description": "Overlay opacity while the component is hovered."
+            },
+            {
+              "name": "--jb-qrcode-overlay-backdrop-filter",
+              "description": "Backdrop filter applied to the overlay."
             }
           ]
         }

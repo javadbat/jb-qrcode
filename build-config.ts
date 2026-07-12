@@ -7,9 +7,10 @@ export const webComponentList: WebComponentBuildConfig[] = [
     outputPath: "./web-component/dist/jb-qrcode.js",
     tsConfigPath: "./web-component/tsconfig.json",
     umdName: "JBQRCode",
-    external: ["qr-code-styling"],
+    external: ["qr-code-styling", "jb-core/theme"],
     globals: {
       "qr-code-styling": "QRCodeStyling",
+      "jb-core/theme": "JBCoreTheme",
     },
   },
 ];

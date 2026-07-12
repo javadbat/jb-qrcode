@@ -1,21 +1,41 @@
 :host{
   display: block;
-  width: 15rem;
-  height: 15rem;
+  width: var(--width);
+  height: var(--height);
 }
 .jb-qrcode-web-component {
   position: relative;
-  border-radius: 1.5rem;
+  width: 100%;
+  height: 100%;
+  border-radius: var(--border-radius);
+  padding: var(--padding);
+  background: var(--bg-color);
+  border: var(--border-width) var(--border-style) var(--border-color);
+  box-shadow: var(--box-shadow);
   overflow: hidden;
   aspect-ratio: 1/1;
+  box-sizing: border-box;
+
+  .qrcode-wrapper {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+
+    svg {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+  }
 
   &:hover .overlay {
-    opacity: 1;
+    opacity: var(--overlay-opacity-hover);
   }
 
   .overlay {
     cursor: pointer;
-    opacity: 0;
+    opacity: var(--overlay-opacity);
     transition: all 0.3s 0s ease;
     position: absolute;
     top: 0;
@@ -23,7 +43,7 @@
     width: 100%;
     height: 100%;
     background-color: var(--overlay-bg-color);
-    backdrop-filter: blur(0.5rem);
+    backdrop-filter: var(--overlay-backdrop-filter);
     z-index: 1;
     overflow: hidden;
     border-radius: var(--border-radius);
@@ -31,16 +51,16 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 1rem;
+    gap: var(--overlay-gap);
     flex-wrap: wrap;
 
     .download-button {
       background-color: transparent;
       color: var(--overlay-button-color);
-      border-radius: 1rem;
+      border-radius: var(--download-button-border-radius);
       stroke: var(--overlay-button-color);
-      width: 2.5rem;
-      height: 2.5rem;
+      width: var(--download-button-size);
+      height: var(--download-button-size);
       display: flex;
       justify-content: center;
       align-items: center;

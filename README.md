@@ -174,19 +174,38 @@ qrCode.backgroundOptions = {
 
 ## CSS parts and variables
 
+For complete styling guidance, live examples, and copyable style recipes, see [Styling](https://javadbat.github.io/design-system/?path=/docs/components-jbqrcode-styling).
+
 | part | description |
 | --- | --- |
+| `component` | Outer QR square wrapper. |
 | `qrcode` | Wrapper where the generated QR SVG is appended. |
 | `overlay` | Hover overlay over the QR code. |
 | `download-button` | Download button inside the overlay. |
+| `download-icon` | Download SVG icon. |
 
 | CSS variable name | description |
 | --- | --- |
+| `--jb-qrcode-width` | Default host width when the width property does not set an inline size. |
+| `--jb-qrcode-height` | Default host height when the height property does not set an inline size. |
+| `--jb-qrcode-border-radius` | Radius of the QR square and overlay. |
+| `--jb-qrcode-padding` | Padding around the generated QR SVG. |
+| `--jb-qrcode-download-button-size` | Download button width and height. |
+| `--jb-qrcode-download-button-border-radius` | Download button border radius. |
+| `--jb-qrcode-overlay-gap` | Gap between overlay controls. |
 | `--jb-qrcode-image-color` | Default QR dot and corner color. |
+| `--jb-qrcode-bg-color` | QR component shell background. |
+| `--jb-qrcode-border-color` | QR component shell border color. |
+| `--jb-qrcode-box-shadow` | QR component shell shadow. |
 | `--jb-qrcode-overlay-bg-color` | Hover overlay background color. |
 | `--jb-qrcode-overlay-button-color` | Download icon color. |
 | `--jb-qrcode-overlay-button-bg-color-hover` | Download button hover background color. |
 | `--jb-qrcode-overlay-button-color-hover` | Download icon hover color. |
+| `--jb-qrcode-border-width` | QR component shell border width. |
+| `--jb-qrcode-border-style` | QR component shell border style. |
+| `--jb-qrcode-overlay-opacity` | Overlay opacity before hover. |
+| `--jb-qrcode-overlay-opacity-hover` | Overlay opacity while the component is hovered. |
+| `--jb-qrcode-overlay-backdrop-filter` | Backdrop filter applied to the overlay. |
 
 ```css
 jb-qrcode {

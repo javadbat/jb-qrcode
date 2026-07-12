@@ -1,0 +1,31 @@
+.qrcode-demo-stack {
+  display: grid;
+  justify-items: center;
+  gap: 0.65rem;
+}
+
+.qrcode-demo-caption {
+  color: var(--jb-text-secondary);
+  font-family: "Courier New", monospace;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+jb-qrcode.terminal-style {
+  --jb-qrcode-image-color: #7cffb2;
+  --jb-qrcode-bg-color: #03190d;
+  --jb-qrcode-border-radius: 0;
+  --jb-qrcode-padding: 0.75rem;
+  --jb-qrcode-border-width: 1px;
+  --jb-qrcode-border-color: #7cffb2;
+  --jb-qrcode-box-shadow: 0 0 0.75rem rgb(0 255 128 / 0.12);
+  --jb-qrcode-overlay-bg-color: rgb(3 25 13 / 0.82);
+  --jb-qrcode-overlay-button-color: #7cffb2;
+  --jb-qrcode-overlay-button-bg-color-hover: #7cffb2;
+  --jb-qrcode-overlay-button-color-hover: #03190d;
+  --jb-qrcode-overlay-backdrop-filter: none;
+}
+
+jb-qrcode.terminal-style::part(download-button) {
+  border: 1px solid currentColor;
+}

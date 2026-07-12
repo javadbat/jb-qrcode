@@ -1,0 +1,29 @@
+.qrcode-demo-stack {
+  display: grid;
+  justify-items: center;
+  gap: 0.65rem;
+}
+
+.qrcode-demo-caption {
+  color: var(--jb-text-secondary);
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+jb-qrcode.aurora-style {
+  --jb-qrcode-image-color: #f8fbff;
+  --jb-qrcode-bg-color: linear-gradient(145deg, #2a357f, #194f4b);
+  --jb-qrcode-border-radius: 1.35rem;
+  --jb-qrcode-padding: 0.9rem;
+  --jb-qrcode-border-width: 1px;
+  --jb-qrcode-border-color: rgb(255 255 255 / 0.36);
+  --jb-qrcode-box-shadow: 0 1rem 2rem rgb(42 53 127 / 0.22);
+  --jb-qrcode-overlay-bg-color: rgb(42 53 127 / 0.62);
+  --jb-qrcode-overlay-button-color: #ffffff;
+  --jb-qrcode-overlay-button-bg-color-hover: rgb(255 255 255 / 0.88);
+  --jb-qrcode-overlay-button-color-hover: #2a357f;
+}
+
+jb-qrcode.aurora-style::part(overlay) {
+  backdrop-filter: blur(1rem) saturate(1.2);
+}
