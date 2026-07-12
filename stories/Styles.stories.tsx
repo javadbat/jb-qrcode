@@ -134,6 +134,11 @@ export const Gallery: Story = {
   ),
 };
 
+export const Default: Story = {
+  name: "Default",
+  render: () => <QRCodeStyleSample cornersType="square" dotsType="square" qrClassName="" themeClassName="" />,
+};
+
 export const Carbon: Story = {
   name: "Carbon",
   render: () => <QRCodeStyleSample {...styleSamples[0]} />,
