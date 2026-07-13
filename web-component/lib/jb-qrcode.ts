@@ -4,8 +4,11 @@ import { renderHTML } from './render';
 import type { BackgroundOptions, CornersSquareOptions, DotsOptions, ElementsObject } from './types.js';
 import { registerDefaultVariables } from 'jb-core/theme';
 import QRCodeStyling, { FileExtension} from 'qr-code-styling'
+import { i18n } from "jb-core/i18n";
+import { dictionary } from "./i18n";
 export * from './types.js';
 export class JBQRCodeWebComponent extends HTMLElement {
+  #internals?: ElementInternals;
   elements!: ElementsObject;
   #value: string | null = null;
   #width: number = 240;
@@ -68,9 +71,11 @@ export class JBQRCodeWebComponent extends HTMLElement {
     if (value) {
       if (value === this.#value) return;
       this.#value = value;
+      if (this.#internals) this.#internals.ariaDescription = value;
       this.drawQrcode();
     } else {
       this.#value = null;
+      if (this.#internals) this.#internals.ariaDescription = "";
       this.elements.qrCodeWrapper.innerHTML = '';
     }
   }
@@ -84,6 +89,11 @@ export class JBQRCodeWebComponent extends HTMLElement {
   }
   constructor() {
     super();
+    if (typeof this.attachInternals === "function") {
+      this.#internals = this.attachInternals();
+      this.#internals.role = "group";
+      this.#internals.ariaLabel = dictionary.get(i18n, "qrCode");
+    }
     this.initWebComponent();
   }
   connectedCallback() {
