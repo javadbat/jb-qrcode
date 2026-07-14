@@ -118,7 +118,7 @@ export class JBQRCodeWebComponent extends HTMLElement {
     this.elements = {
       componentWrapper: shadowRoot.querySelector('.jb-qrcode-web-component')!,
       qrCodeWrapper: shadowRoot.querySelector('.qrcode-wrapper')!,
-      downloadButton: shadowRoot.querySelector('#DownloadIcon')!,
+      downloadButton: shadowRoot.querySelector('.download-button')!,
     };
     this.#initEventListeners();
   }

@@ -5,7 +5,7 @@ import type { Options } from 'qr-code-styling';
 export type ElementsObject = {
     componentWrapper: HTMLDivElement,
     qrCodeWrapper: HTMLDivElement,
-    downloadButton: HTMLDivElement
+    downloadButton: HTMLButtonElement
 }
 
 export type JBQRCodeEventType<TEvent> = EventTypeWithTarget<TEvent, JBQRCodeWebComponent>

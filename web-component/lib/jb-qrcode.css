@@ -55,6 +55,14 @@
     flex-wrap: wrap;
 
     .download-button {
+      all: unset;
+      box-sizing: border-box;
+      cursor: pointer;
+
+      &:focus-visible {
+        outline: 2px solid var(--jb-qrcode-focus-ring-color, Highlight);
+        outline-offset: 2px;
+      }
       background-color: transparent;
       color: var(--overlay-button-color);
       border-radius: var(--download-button-border-radius);
