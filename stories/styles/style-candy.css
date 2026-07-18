@@ -13,11 +13,11 @@
 jb-qrcode.candy-style {
   --jb-qrcode-image-color: #8f174f;
   --jb-qrcode-bg-color: #fff3fb;
-  --jb-qrcode-border-radius: 1.5rem;
+  --jb-qrcode-border-radius: 1.25rem;
   --jb-qrcode-padding: 0.8rem;
-  --jb-qrcode-border-width: 2px;
-  --jb-qrcode-border-color: var(--jb-text-contrast);
-  --jb-qrcode-box-shadow: 0 0.8rem 1.6rem rgb(244 114 182 / 0.22);
+  --jb-qrcode-border-width: 1px;
+  --jb-qrcode-border-color: var(--jb-border-color);
+  --jb-qrcode-box-shadow: 0 0.6rem 1.35rem rgb(244 114 182 / 0.16);
   --jb-qrcode-overlay-bg-color: rgb(244 114 182 / 0.58);
   --jb-qrcode-download-button-border-radius: 999rem;
   --jb-qrcode-overlay-button-color: var(--jb-text-contrast);
@@ -26,5 +26,5 @@ jb-qrcode.candy-style {
 }
 
 jb-qrcode.candy-style::part(component) {
-  outline: 0.25rem solid rgb(255 255 255 / 0.55);
+  outline: 0.125rem solid rgb(255 255 255 / 0.55);
 }

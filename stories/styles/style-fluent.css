@@ -17,7 +17,7 @@ jb-qrcode.fluent-style {
   --jb-qrcode-padding: 0.75rem;
   --jb-qrcode-border-width: 1px;
   --jb-qrcode-border-color: var(--jb-surface-hover);
-  --jb-qrcode-box-shadow: 0 0.4rem 1.1rem rgb(0 0 0 / 0.12);
+  --jb-qrcode-box-shadow: 0 0.125rem 0.5rem rgb(0 0 0 / 0.1);
   --jb-qrcode-overlay-bg-color: rgb(0 120 212 / 0.68);
   --jb-qrcode-download-button-border-radius: 0.25rem;
   --jb-qrcode-overlay-button-color: var(--jb-text-contrast);
