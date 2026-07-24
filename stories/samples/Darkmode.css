@@ -6,8 +6,5 @@
   --jb-input-value-color:#C4C2D6;
   --jb-calendar-color:#C4C2D6;
   --jb-calendar-arrow-fill-color:#FF9900;
-  --jb-calendar-arrow-button-bg-color:rgb(53, 46, 46);
-}
-.rtl{
-  
+  --jb-button-bg-color:rgb(53, 46, 46);
 }
