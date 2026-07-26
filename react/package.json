@@ -31,6 +31,6 @@
 		"url": "git@github.com:javadbat/jb-qrcode.git"
   },
   "dependencies": {
-    "jb-qrcode": ">=1.0.0"
+    "jb-qrcode": "^1.0.0"
   }
 }
