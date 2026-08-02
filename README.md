@@ -16,13 +16,13 @@
 
 ## When to use
 
-Use `jb-qrcode` when you need to render a QR code for a URL, text, payment link, invite link, or any other scannable string.
+Use `jb-qrcode` when you need to render a QR code for a URL, text, payment link, invite link, or any other scannable string. See the [basic QR demo](https://javadbat.github.io/design-system/?path=/story/components-jbqrcode--normal) for the default rendering.
 
 Use a server-generated QR image when the QR code must be rendered before JavaScript runs or when you need a static asset in non-browser contexts.
 
 ## Demo
 
-- [Storybook](https://javadbat.github.io/design-system/?path=/docs/components-jbqrcode)
+- Explore the [QR examples](https://javadbat.github.io/design-system/?path=/story/components-jbqrcode--normal), including [logos](https://javadbat.github.io/design-system/?path=/story/components-jbqrcode--with-logo), [custom sizing](https://javadbat.github.io/design-system/?path=/story/components-jbqrcode--with-custom-width), [rendering options](https://javadbat.github.io/design-system/?path=/story/components-jbqrcode--customized-look), and [downloads](https://javadbat.github.io/design-system/?path=/story/components-jbqrcode--download).
 
 ## Using With JS Frameworks
 
@@ -50,40 +50,42 @@ import 'jb-qrcode';
 
 | name | type | default | description |
 | --- | --- | --- | --- |
-| `value` | `string` | `null` | QR code data. When empty, no QR code is rendered. |
-| `logo` | `string` | `null` | Optional center logo image URL. |
-| `file-name` | `string` | `qr` | Default file name used by the overlay download button and `download()`. |
-| `width` | `number` | `240` | QR render width in pixels. Also sets host inline width. |
-| `height` | `number` | `240` | QR render height in pixels. Also sets host inline height. |
+| `value` | `string` | `null` | QR code data. When empty, no QR code is rendered; see the [empty value example](https://javadbat.github.io/design-system/?path=/story/components-jbqrcode--empty-value). |
+| `logo` | `string` | `null` | Optional center logo image URL; see the [logo example](https://javadbat.github.io/design-system/?path=/story/components-jbqrcode--with-logo). |
+| `file-name` | `string` | `qr` | Default file name used by the overlay download button and `download()`; see the [download example](https://javadbat.github.io/design-system/?path=/story/components-jbqrcode--download). |
+| `width` | `number` | `240` | QR render width in pixels. Also sets host inline width; see [custom sizing](https://javadbat.github.io/design-system/?path=/story/components-jbqrcode--with-custom-width). |
+| `height` | `number` | `240` | QR render height in pixels. Also sets host inline height; see [custom sizing](https://javadbat.github.io/design-system/?path=/story/components-jbqrcode--with-custom-width). |
 
 ### Properties
 
 | name | type | readonly | description |
 | --- | --- | --- | --- |
-| `value` | `string \| null` | no | QR code data. |
-| `logo` | `string \| null` | no | Optional center logo image URL. |
-| `width` | `number` | no | QR render width in pixels. |
-| `height` | `number` | no | QR render height in pixels. |
-| `downloadFileName` | `string` | no | Default file name used by `download()`. |
-| `dotsOptions` | `DotsOptions` | no | Dot rendering options passed to `qr-code-styling`. |
-| `cornersSquareOptions` | `CornersSquareOptions` | no | Corner square rendering options passed to `qr-code-styling`. |
-| `backgroundOptions` | `BackgroundOptions` | no | Background rendering options passed to `qr-code-styling`. |
+| `value` | `string \| null` | no | QR code data; see the [value example](https://javadbat.github.io/design-system/?path=/story/components-jbqrcode--normal). |
+| `logo` | `string \| null` | no | Optional center logo image URL; see the [logo example](https://javadbat.github.io/design-system/?path=/story/components-jbqrcode--with-logo). |
+| `width` | `number` | no | QR render width in pixels; see [custom sizing](https://javadbat.github.io/design-system/?path=/story/components-jbqrcode--with-custom-width). |
+| `height` | `number` | no | QR render height in pixels; see [custom sizing](https://javadbat.github.io/design-system/?path=/story/components-jbqrcode--with-custom-width). |
+| `downloadFileName` | `string` | no | Default file name used by `download()`; see the [download example](https://javadbat.github.io/design-system/?path=/story/components-jbqrcode--download). |
+| `dotsOptions` | `DotsOptions` | no | Dot rendering options passed to `qr-code-styling`; see [rendering options](https://javadbat.github.io/design-system/?path=/story/components-jbqrcode--customized-look). |
+| `cornersSquareOptions` | `CornersSquareOptions` | no | Corner square rendering options passed to `qr-code-styling`; see [rendering options](https://javadbat.github.io/design-system/?path=/story/components-jbqrcode--customized-look). |
+| `backgroundOptions` | `BackgroundOptions` | no | Background rendering options passed to `qr-code-styling`; see [rendering options](https://javadbat.github.io/design-system/?path=/story/components-jbqrcode--customized-look). |
 
 ### Methods
 
 | name | returns | description |
 | --- | --- | --- |
-| `drawQrcode()` | `void` | Recreates and appends the QR SVG using the current value and options. |
-| `download(fileName?, extension?)` | `void` | Downloads the current QR code. `extension` defaults to `"png"`. |
+| `drawQrcode()` | `void` | Recreates and appends the QR SVG using the current value and options; see [rendering options](https://javadbat.github.io/design-system/?path=/story/components-jbqrcode--customized-look). |
+| `download(fileName?, extension?)` | `void` | Downloads the current QR code. `extension` defaults to `"png"`; see the [download example](https://javadbat.github.io/design-system/?path=/story/components-jbqrcode--download). |
 
 ### Events
 
 | event | description |
 | --- | --- |
-| `load` | Dispatched from `connectedCallback`. |
-| `init` | Dispatched from `connectedCallback` after `load`. |
+| `load` | Dispatched from `connectedCallback`; see the [events example](https://javadbat.github.io/design-system/?path=/story/components-jbqrcode--events). |
+| `init` | Dispatched from `connectedCallback` after `load`; see the [events example](https://javadbat.github.io/design-system/?path=/story/components-jbqrcode--events). |
 
 ## Value
+
+Set `value` to the URL or text to encode. See the [basic value demo](https://javadbat.github.io/design-system/?path=/story/components-jbqrcode--normal); an [empty value](https://javadbat.github.io/design-system/?path=/story/components-jbqrcode--empty-value) clears the QR wrapper.
 
 ```html
 <jb-qrcode value="https://www.google.com"></jb-qrcode>
@@ -98,6 +100,8 @@ qrCode.value = 'https://javadbat.github.io/design-system/';
 When `value` is empty or `null`, the QR wrapper is cleared.
 
 ## Logo
+
+Pass a logo URL to place an image in the center of the QR code; see the [logo demo](https://javadbat.github.io/design-system/?path=/story/components-jbqrcode--with-logo).
 
 ```html
 <jb-qrcode
@@ -116,6 +120,8 @@ The logo is passed to `qr-code-styling` as `image` with `crossOrigin: "anonymous
 
 ## Size
 
+Set `width` and `height` to control the generated SVG dimensions and host size. See the [custom size demo](https://javadbat.github.io/design-system/?path=/story/components-jbqrcode--with-custom-width).
+
 ```html
 <jb-qrcode value="https://example.com" width="320" height="320"></jb-qrcode>
 ```
@@ -128,6 +134,8 @@ qrCode.height = 320;
 ```
 
 ## Download
+
+Use the overlay button or call `download()` directly; the [download demo](https://javadbat.github.io/design-system/?path=/story/components-jbqrcode--download) shows both the file name and programmatic API.
 
 The hover overlay contains a download button. It calls `download()` and saves a PNG by default.
 
@@ -144,6 +152,8 @@ qrCode.download('invite-link-svg', 'svg');
 ```
 
 ## Rendering options
+
+Customize dots, corner squares, and background through the same option objects accepted by `qr-code-styling`. See the [customized look demo](https://javadbat.github.io/design-system/?path=/story/components-jbqrcode--customized-look).
 
 The rendering option properties use the same option objects as [`qr-code-styling`](https://www.npmjs.com/package/qr-code-styling).
 
@@ -176,7 +186,7 @@ qrCode.backgroundOptions = {
 
 ## CSS parts and variables
 
-For complete styling guidance, live examples, and copyable style recipes, see [Styling](https://javadbat.github.io/design-system/?path=/docs/components-jbqrcode-styling).
+For complete styling guidance, live examples, and copyable style recipes, see [Styling](https://javadbat.github.io/design-system/?path=/docs/components-jbqrcode-styling) and the [style gallery](https://javadbat.github.io/design-system/?path=/story/components-jbqrcode-style--gallery).
 
 | part | description |
 | --- | --- |
@@ -222,7 +232,7 @@ jb-qrcode::part(download-button) {
 
 ## Accessibility notes
 
-- The generated QR code is visual content. Add nearby text or an accessible link to the encoded value when users need a non-visual alternative.
+- The generated QR code is visual content. Add nearby text or an accessible link to the encoded value when users need a non-visual alternative; see the [basic QR demo](https://javadbat.github.io/design-system/?path=/story/components-jbqrcode--normal) for the visual presentation.
 - The overlay download control is inside shadow DOM. If keyboard access to downloading is required, call `download()` from an external button in your app.
 
 ## Related Docs

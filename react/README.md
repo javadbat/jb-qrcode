@@ -9,7 +9,7 @@ React wrapper for [`jb-qrcode`](https://github.com/javadbat/jb-qrcode). It impor
 
 ## Demo
 
-- [Storybook](https://javadbat.github.io/design-system/?path=/docs/components-jbqrcode)
+Explore the [QR examples](https://javadbat.github.io/design-system/?path=/story/components-jbqrcode--normal), including [logos](https://javadbat.github.io/design-system/?path=/story/components-jbqrcode--with-logo), [custom sizing](https://javadbat.github.io/design-system/?path=/story/components-jbqrcode--with-custom-width), [rendering options](https://javadbat.github.io/design-system/?path=/story/components-jbqrcode--customized-look), and [downloads](https://javadbat.github.io/design-system/?path=/story/components-jbqrcode--download).
 
 ## Installation
 
@@ -25,30 +25,32 @@ import { JBQRCode } from 'jb-qrcode/react';
 
 ## When to use
 
-Use `JBQRCode` when a React view needs to render downloadable QR codes with optional logo, size control, and `qr-code-styling` render options.
+Use `JBQRCode` when a React view needs to render downloadable QR codes with optional logo, size control, and `qr-code-styling` render options. See the [basic QR demo](https://javadbat.github.io/design-system/?path=/story/components-jbqrcode--normal) for the default rendering.
 
 ## Props
 
 | prop | type | description |
 | --- | --- | --- |
-| `value` | `string` | QR code data. |
-| `logo` | `string` | Optional center logo image URL. |
-| `width` | `number` | QR render width in pixels. |
-| `height` | `number` | QR render height in pixels. |
-| `downloadFileName` | `string` | Default file name used by the overlay download button and `download()`. |
-| `dotsOptions` | `DotsOptions` | Dot rendering options passed to `qr-code-styling`. |
-| `dotsOption` | `DotsOptions` | Legacy alias for `dotsOptions`. |
-| `cornersSquareOptions` | `CornersSquareOptions` | Corner square rendering options passed to `qr-code-styling`. |
-| `backgroundOptions` | `BackgroundOptions` | Background rendering options passed to `qr-code-styling`. |
+| `value` | `string` | QR code data; see the [value example](https://javadbat.github.io/design-system/?path=/story/components-jbqrcode--normal). |
+| `logo` | `string` | Optional center logo image URL; see the [logo example](https://javadbat.github.io/design-system/?path=/story/components-jbqrcode--with-logo). |
+| `width` | `number` | QR render width in pixels; see [custom sizing](https://javadbat.github.io/design-system/?path=/story/components-jbqrcode--with-custom-width). |
+| `height` | `number` | QR render height in pixels; see [custom sizing](https://javadbat.github.io/design-system/?path=/story/components-jbqrcode--with-custom-width). |
+| `downloadFileName` | `string` | Default file name used by the overlay download button and `download()`; see the [download example](https://javadbat.github.io/design-system/?path=/story/components-jbqrcode--download). |
+| `dotsOptions` | `DotsOptions` | Dot rendering options passed to `qr-code-styling`; see [rendering options](https://javadbat.github.io/design-system/?path=/story/components-jbqrcode--customized-look). |
+| `dotsOption` | `DotsOptions` | Legacy alias for `dotsOptions`; see [rendering options](https://javadbat.github.io/design-system/?path=/story/components-jbqrcode--customized-look). |
+| `cornersSquareOptions` | `CornersSquareOptions` | Corner square rendering options passed to `qr-code-styling`; see [rendering options](https://javadbat.github.io/design-system/?path=/story/components-jbqrcode--customized-look). |
+| `backgroundOptions` | `BackgroundOptions` | Background rendering options passed to `qr-code-styling`; see [rendering options](https://javadbat.github.io/design-system/?path=/story/components-jbqrcode--customized-look). |
 
 ## Events
 
 | prop | event | description |
 | --- | --- | --- |
-| `onLoad` | `load` | Called from the web component `connectedCallback`. |
-| `onInit` | `init` | Called after `onLoad`. |
+| `onLoad` | `load` | Called from the web component `connectedCallback`; see the [events example](https://javadbat.github.io/design-system/?path=/story/components-jbqrcode--events). |
+| `onInit` | `init` | Called after `onLoad`; see the [events example](https://javadbat.github.io/design-system/?path=/story/components-jbqrcode--events). |
 
 ## Basic usage
+
+Render a QR code by passing a URL or text to `value`; see the [basic usage demo](https://javadbat.github.io/design-system/?path=/story/components-jbqrcode--normal).
 
 ```jsx
 <JBQRCode value="https://github.com/javadbat/design-system" />
@@ -56,9 +58,13 @@ Use `JBQRCode` when a React view needs to render downloadable QR codes with opti
 
 ## Value
 
+Set `value` to the text or URL encoded in the QR code. An [empty value](https://javadbat.github.io/design-system/?path=/story/components-jbqrcode--empty-value) clears the QR wrapper.
+
 Set `value` to the text or URL encoded in the QR code. The component re-renders when the value changes.
 
 ## Logo
+
+Pass a logo URL to place an image in the center; see the [logo demo](https://javadbat.github.io/design-system/?path=/story/components-jbqrcode--with-logo).
 
 ```jsx
 <JBQRCode
@@ -69,6 +75,8 @@ Set `value` to the text or URL encoded in the QR code. The component re-renders 
 
 ## Size
 
+Set `width` and `height` to control the generated SVG dimensions; see the [custom size demo](https://javadbat.github.io/design-system/?path=/story/components-jbqrcode--with-custom-width).
+
 ```jsx
 <JBQRCode
   value="https://github.com/javadbat/design-system"
@@ -78,6 +86,8 @@ Set `value` to the text or URL encoded in the QR code. The component re-renders 
 ```
 
 ## Rendering options
+
+Customize dots, corner squares, and background with the same option objects as `qr-code-styling`; see the [customized look demo](https://javadbat.github.io/design-system/?path=/story/components-jbqrcode--customized-look).
 
 ```jsx
 <JBQRCode
@@ -107,6 +117,8 @@ Set `value` to the text or URL encoded in the QR code. The component re-renders 
 
 ## Programmatic download
 
+Use a ref to call `download(fileName?, extension?)`; the [download demo](https://javadbat.github.io/design-system/?path=/story/components-jbqrcode--download) covers the file name and extension.
+
 ```jsx
 const qrRef = useRef(null);
 
@@ -121,11 +133,11 @@ qrRef.current?.download('design-system', 'png');
 
 ## Download
 
-The built-in overlay download action and the `download(fileName?, extension?)` method use `downloadFileName` as the default file name.
+The built-in overlay download action and the `download(fileName?, extension?)` method use `downloadFileName` as the default file name. See the [download interaction](https://javadbat.github.io/design-system/?path=/story/components-jbqrcode--download).
 
 ## Styling
 
-The React component uses the same CSS variables and parts as the web component.
+The React component uses the same CSS variables and parts as the web component. See the shared [web-component styling guidance](../README.md#css-parts-and-variables) and the [style gallery](https://javadbat.github.io/design-system/?path=/story/components-jbqrcode-style--gallery).
 
 ```css
 .brand-qr {
@@ -140,11 +152,11 @@ The React component uses the same CSS variables and parts as the web component.
 
 ## CSS parts and variables
 
-Use the same CSS parts and variables as the web component. The `Styling` section above shows the React class-based pattern.
+Use the same CSS parts and variables as the web component. The `Styling` section above shows the React class-based pattern; the [style gallery](https://javadbat.github.io/design-system/?path=/story/components-jbqrcode-style--gallery) demonstrates the available treatments.
 
 ## Accessibility notes
 
-Provide nearby text that describes what the QR code represents. QR images are visual encodings, so the destination or payload should also be available as readable text or a link when users need to inspect it.
+Provide nearby text that describes what the QR code represents. QR images are visual encodings, so the destination or payload should also be available as readable text or a link when users need to inspect it; see the [basic QR example](https://javadbat.github.io/design-system/?path=/story/components-jbqrcode--normal).
 
 ## Shared Documentation
 
