@@ -10,6 +10,7 @@
 
 ### Changed
 
+- Updated component color defaults to use the shared semantic content and surface tokens.
 - The QR download action now uses a native button with visible keyboard focus.
 - Updated examples to use renamed design-system CSS variables.
 - Standardized all custom theme recipes on `jb-qrcode.<theme>-style`, public parts, and states.

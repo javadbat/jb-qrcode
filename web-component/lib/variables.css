@@ -14,8 +14,8 @@
   --border-color: var(--jb-qrcode-border-color, transparent);
   --box-shadow: var(--jb-qrcode-box-shadow, none);
   --overlay-bg-color: var(--jb-qrcode-overlay-bg-color, oklch(from var(--jb-neutral) l c h / calc(alpha - 0.5)));
-  --overlay-button-color: var(--jb-qrcode-overlay-button-color, var(--jb-white));
-  --overlay-button-bg-color-hover: var(--jb-qrcode-overlay-button-bg-color-hover, var(--jb-white));
+  --overlay-button-color: var(--jb-qrcode-overlay-button-color, var(--jb-content-inverse));
+  --overlay-button-bg-color-hover: var(--jb-qrcode-overlay-button-bg-color-hover, var(--jb-surface-primary));
   --overlay-button-color-hover: var(--jb-qrcode-overlay-button-color-hover, var(--jb-neutral));
 
   /* Other */
