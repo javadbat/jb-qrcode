@@ -5,7 +5,7 @@
 }
 
 .qrcode-demo-caption {
-  color: var(--jb-text-secondary);
+  color: var(--jb-content-secondary);
   font-family: "Courier New", monospace;
   font-size: 0.78rem;
   font-weight: 700;

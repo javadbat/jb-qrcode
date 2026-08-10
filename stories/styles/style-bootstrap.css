@@ -5,14 +5,14 @@
 }
 
 .qrcode-demo-caption {
-  color: var(--jb-text-secondary);
+  color: var(--jb-content-secondary);
   font-size: 0.78rem;
   font-weight: 600;
 }
 
 jb-qrcode.bootstrap-style {
-  --jb-qrcode-image-color: var(--jb-text-primary);
-  --jb-qrcode-bg-color: var(--jb-surface);
+  --jb-qrcode-image-color: var(--jb-content-primary);
+  --jb-qrcode-bg-color: var(--jb-surface-primary);
   --jb-qrcode-border-radius: 0.375rem;
   --jb-qrcode-padding: 0.75rem;
   --jb-qrcode-border-width: 1px;
@@ -20,8 +20,8 @@ jb-qrcode.bootstrap-style {
   --jb-qrcode-box-shadow: 0 0.25rem 0.75rem rgb(33 37 41 / 0.08);
   --jb-qrcode-overlay-bg-color: rgb(13 110 253 / 0.72);
   --jb-qrcode-download-button-border-radius: 0.375rem;
-  --jb-qrcode-overlay-button-color: var(--jb-surface);
-  --jb-qrcode-overlay-button-bg-color-hover: var(--jb-surface);
+  --jb-qrcode-overlay-button-color: var(--jb-surface-primary);
+  --jb-qrcode-overlay-button-bg-color-hover: var(--jb-surface-primary);
   --jb-qrcode-overlay-button-color-hover: var(--jb-focus-color);
 }
 

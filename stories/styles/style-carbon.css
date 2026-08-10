@@ -5,22 +5,22 @@
 }
 
 .qrcode-demo-caption {
-  color: var(--jb-text-secondary);
+  color: var(--jb-content-secondary);
   font-size: 0.78rem;
   font-weight: 600;
 }
 
 jb-qrcode.carbon-style {
-  --jb-qrcode-image-color: var(--jb-text-primary);
-  --jb-qrcode-bg-color: var(--jb-background);
+  --jb-qrcode-image-color: var(--jb-content-primary);
+  --jb-qrcode-bg-color: var(--jb-surface-secondary);
   --jb-qrcode-border-radius: 0;
   --jb-qrcode-padding: 0.75rem;
   --jb-qrcode-border-width: 1px;
   --jb-qrcode-border-color: var(--jb-border-color);
   --jb-qrcode-box-shadow: none;
   --jb-qrcode-overlay-bg-color: rgb(15 98 254 / 0.72);
-  --jb-qrcode-overlay-button-color: var(--jb-text-inverse);
-  --jb-qrcode-overlay-button-bg-color-hover: var(--jb-text-inverse);
+  --jb-qrcode-overlay-button-color: var(--jb-content-inverse);
+  --jb-qrcode-overlay-button-bg-color-hover: var(--jb-content-inverse);
   --jb-qrcode-overlay-button-color-hover: var(--jb-primary);
 }
 

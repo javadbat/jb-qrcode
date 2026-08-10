@@ -5,7 +5,7 @@
 }
 
 .qrcode-demo-caption {
-  color: var(--jb-text-secondary);
+  color: var(--jb-content-secondary);
   font-size: 0.78rem;
   font-weight: 800;
 }
@@ -20,8 +20,8 @@ jb-qrcode.candy-style {
   --jb-qrcode-box-shadow: 0 0.6rem 1.35rem rgb(244 114 182 / 0.16);
   --jb-qrcode-overlay-bg-color: rgb(244 114 182 / 0.58);
   --jb-qrcode-download-button-border-radius: 999rem;
-  --jb-qrcode-overlay-button-color: var(--jb-text-inverse);
-  --jb-qrcode-overlay-button-bg-color-hover: var(--jb-text-inverse);
+  --jb-qrcode-overlay-button-color: var(--jb-content-inverse);
+  --jb-qrcode-overlay-button-bg-color-hover: var(--jb-content-inverse);
   --jb-qrcode-overlay-button-color-hover: #8f174f;
 }
 
