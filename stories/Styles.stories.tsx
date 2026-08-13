@@ -27,15 +27,18 @@ import './styles/style-porcelain.css';
 import './styles/style-sunset.css';
 import './styles/style-terminal.css';
 
+const qrValue = "https://javadbat.github.io/design-system/";
+
 const meta = {
   title: "Components/JBQRCode/Style",
   component: JBQRCode,
+  args: {
+    value: qrValue,
+  },
 } satisfies Meta<typeof JBQRCode>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
-
-const qrValue = "https://javadbat.github.io/design-system/";
 
 const styleSamples = [
   { name: "Carbon", themeClassName: "carbon-style", qrClassName: "carbon-style", dotsType: "square", cornersType: "square" },
@@ -58,8 +61,8 @@ function QRCodeStyleSample({
   qrClassName,
   themeClassName,
 }: {
-  cornersType: CornersSquareOptions["type"];
-  dotsType: DotsOptions["type"];
+  cornersType: NonNullable<CornersSquareOptions>["type"];
+  dotsType: NonNullable<DotsOptions>["type"];
   qrClassName: string;
   themeClassName: string;
 }) {
