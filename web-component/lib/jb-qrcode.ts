@@ -182,3 +182,9 @@ export class JBQRCodeWebComponent extends JBBaseComponent {
   }
 }
 defineWebComponent('jb-qrcode', JBQRCodeWebComponent);
+
+declare global {
+  interface HTMLElementTagNameMap {
+    "jb-qrcode": JBQRCodeWebComponent;
+  }
+}
