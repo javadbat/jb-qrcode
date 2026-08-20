@@ -1,3 +1,4 @@
+import { defineWebComponent, JBBaseComponent } from "jb-core";
 import CSS from './jb-qrcode.css';
 import VariablesCSS from './variables.css';
 import { renderHTML } from './render';
@@ -7,7 +8,7 @@ import QRCodeStyling, { FileExtension} from 'qr-code-styling'
 import { i18n } from "jb-core/i18n";
 import { dictionary } from "./i18n";
 export * from './types.js';
-export class JBQRCodeWebComponent extends HTMLElement {
+export class JBQRCodeWebComponent extends JBBaseComponent {
   #internals?: ElementInternals;
   elements!: ElementsObject;
   #value: string | null = null;
@@ -180,8 +181,4 @@ export class JBQRCodeWebComponent extends HTMLElement {
     this.#qrCode?.download({ name: fileName, extension: extension });
   }
 }
-const myElementNotExists = !customElements.get('jb-qrcode');
-if (myElementNotExists) {
-  window.customElements.define('jb-qrcode', JBQRCodeWebComponent);
-}
-
+defineWebComponent('jb-qrcode', JBQRCodeWebComponent);
