@@ -28,7 +28,7 @@
   "types": "./dist/JBQrcode.d.ts",
   "repository": {
 		"type": "git",
-		"url": "git@github.com:javadbat/jb-qrcode.git"
+		"url": "https://github.com/javadbat/jb-qrcode.git"
   },
   "dependencies": {
     "jb-qrcode": "^1.0.0"
