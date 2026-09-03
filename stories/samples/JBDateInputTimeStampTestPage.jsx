@@ -2,7 +2,7 @@ import React, {useState, useMemo, useCallback} from 'react';
 import {JBDateInput} from 'jb-date-input/react';
 function JBDateInputTimeStampTest(props) {
   const [setValue, setValueSetter] = useState(null);
-  const valueInDate = useMemo(()=>{
+  const valueAsDate = useMemo(()=>{
     if(setValue){
       return new Date(parseInt(setValue)).toString();
     }else{
@@ -21,7 +21,7 @@ function JBDateInputTimeStampTest(props) {
         <br /><br />Min date is: {props.min? props.min:"Unlimited"}
         <br /><br />Max date is: {props.max? props.max:"Unlimited"}
         <br /><br />Your chosen date is: {setValue}
-        <br /><br />Your chosen date in greg is: {valueInDate}
+        <br /><br />Your chosen date in greg is: {valueAsDate}
       </div>
     </div>
   );

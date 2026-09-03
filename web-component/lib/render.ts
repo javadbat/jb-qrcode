@@ -3,7 +3,7 @@ import { dictionary } from "./i18n";
 
 export function renderHTML(): string {
   return /* html */ `
-  <div class="jb-qrcode-web-component" part="component">
+  <div class="jb-qrcode-web-component" part="root">
       <div class="qrcode-wrapper" part="qrcode" role="img" aria-label="${dictionary.get(i18n, "qrCode")}">
       </div>
       <div class="overlay" part="overlay">      

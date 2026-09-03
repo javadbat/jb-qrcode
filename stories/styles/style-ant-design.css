@@ -25,6 +25,6 @@ jb-qrcode.ant-design-style {
   --jb-qrcode-overlay-button-color-hover: var(--jb-primary-pressed);
 }
 
-jb-qrcode.ant-design-style::part(component) {
+jb-qrcode.ant-design-style::part(root) {
   outline: none;
 }

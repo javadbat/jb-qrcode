@@ -144,7 +144,7 @@
           ],
           "cssParts": [
             {
-              "name": "component",
+              "name": "root",
               "description": "Outer QR square wrapper."
             },
             {

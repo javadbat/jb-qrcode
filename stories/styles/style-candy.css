@@ -25,6 +25,6 @@ jb-qrcode.candy-style {
   --jb-qrcode-overlay-button-color-hover: #8f174f;
 }
 
-jb-qrcode.candy-style::part(component) {
+jb-qrcode.candy-style::part(root) {
   outline: 0.125rem solid rgb(255 255 255 / 0.55);
 }

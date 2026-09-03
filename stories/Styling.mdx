@@ -61,7 +61,7 @@ Each example uses one shared example theme pack from [`docs/styles`](https://git
 ## Recommended Customization Path
 
 1. Use `--jb-qrcode-*` variables first for the shell background, radius, padding, border, shadow, overlay, and download button.
-2. Use `jb-qrcode::part(component)` for effects on the outer square surface.
+2. Use `jb-qrcode::part(root)` for effects on the outer square surface.
 3. Use `jb-qrcode::part(qrcode)` only for the generated SVG wrapper, such as centering or filters.
 4. Use `jb-qrcode::part(overlay)`, `::part(download-button)`, and `::part(download-icon)` for hover-download affordances.
 5. Use `dotsOptions`, `cornersSquareOptions`, and `backgroundOptions` when changing QR drawing shape or generated SVG colors.

@@ -33,7 +33,7 @@ function JBDateInputJalaliTest(props) {
       <h3>test custom validation</h3>
       <JBDateInput validationList={validationList} value={value} label={props.label} valueType={props.valueType} onChange={e => {valueSetter(e.target.value);}} onSelect={e => {valueSetter(e.target.value);}} format={props.format}></JBDateInput>
       <h3>test via JS Date type value</h3>
-      <JBDateInput value={dateValue} onChange={(e)=>setDateValue(e.target.valueInDate)}></JBDateInput>
+      <JBDateInput value={dateValue} onChange={(e)=>setDateValue(e.target.valueAsDate)}></JBDateInput>
     </div>
   );
 }

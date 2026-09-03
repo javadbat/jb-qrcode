@@ -1,5 +1,11 @@
 # Changelog
 
+
+## [1.0.0] - 2026-09-03
+
+### Changed
+
+- Breaking: renamed the component root part from `component` to `root`.
 ## [0.3.0] - 2026-089-02
 
 ### Added

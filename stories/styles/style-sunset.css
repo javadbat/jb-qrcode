@@ -24,6 +24,6 @@ jb-qrcode.sunset-style {
   --jb-qrcode-overlay-button-color-hover: #87363d;
 }
 
-jb-qrcode.sunset-style::part(component) {
+jb-qrcode.sunset-style::part(root) {
   outline: 1px solid rgb(255 219 110 / 0.26);
 }
