@@ -16,7 +16,7 @@
     "web component",
     "react component"
   ],
-  "version": "1.0.0",
+  "version": "0.4.0",
   
   "bugs": "https://github.com/javadbat/jb-qrcode/issues",
   "license": "MIT",
@@ -49,6 +49,6 @@
   },
   "dependencies": {
     "qr-code-styling": "^1.9.2",
-    "jb-core": "^0.36.0"
+    "jb-core": "^0.37.0"
   }
 }
