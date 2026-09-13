@@ -11,7 +11,7 @@ export const webComponentList: WebComponentBuildConfig[] = [
     globals: {
       "qr-code-styling": "QRCodeStyling",
       "jb-core/theme": "JBCoreTheme",
-      "jb-core/i18n": "JBCoreI18N",
+      "jb-core/i18n": "JBCoreI18n",
     },
   },
 ];
